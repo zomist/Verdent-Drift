@@ -1,0 +1,42 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 702, in script
+    show c left with zoomin(2.0)
+  File "game/script.rpy", line 702, in <module>
+    show c left with zoomin(2.0)
+                     ~~~~~~^^^^^
+AttributeError: 'float' object has no attribute 'get_placement'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 702, in script
+    show c left with zoomin(2.0)
+  File "renpy/ast.py", line 1584, in execute
+    paired = renpy.python.py_eval(self.paired)
+             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 702, in <module>
+    show c left with zoomin(2.0)
+                     ~~~~~~^^^^^
+  File "renpy/display/movetransition.py", line 341, in OldMoveTransition
+    rv = merge_slide(old_widget, new_widget)
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/movetransition.py", line 203, in merge_slide
+    old_pos = position(old)
+              ~~~~~~~~^^^^^
+  File "renpy/display/movetransition.py", line 36, in position
+    xpos, ypos, xanchor, yanchor, _xoffset, _yoffset, _subpixel = d.get_placement()
+                                                                  ^^^^^^^^^^^^^^^  
+AttributeError: 'float' object has no attribute 'get_placement'
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.3.26051504
+FJLF 1.0
+Thu Jul 16 00:56:35 2026
